@@ -1,0 +1,13 @@
+{
+  "name": "meanCheckin",
+  "version": "0.0.1",
+  "description": "Realtime check-in application.",
+  "main": "server.js",
+  "author": "Scotch",
+  "dependencies": {
+    "express": "~3.4.4",
+    "mongoose": "~3.6.2",
+    "socket.io": "^1.0.6",
+    "jade": "~0.31.2"
+  }
+}
