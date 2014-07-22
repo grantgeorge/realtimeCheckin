@@ -7,7 +7,7 @@
 
     <div class="checkbox" ng-repeat="attendee in attendees">
       <label>
-        <flatui-checkbox model="attendee.checkedIn"></flatui-checkbox> {{ attendee.firstName }} {{ attendee.lastName }}
+        <flatui-checkbox model="attendee.checkedIn" ng-click="checkin(attendee)"></flatui-checkbox> {{ attendee.firstName }} {{ attendee.lastName }}
       </label>
     </div>
 
@@ -36,18 +36,7 @@
 
 <br />
 
-<form class="form-horizontal" role="form">
-  <div class="form-group">
-    <label for="inputMessage" class="col-sm-2 control-label">Message</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputMessage" placeholder="Message" ng-model="message">
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary btn-lg" ng-click="sendMessage()">Send</button>
-</form>
-
-<ul>
-  <li ng-repeat="message in messages">
-    {{message.text}}
-  </li>
-</ul>
+<div class="alert alert-warning alert-dismissible" role="alert" ng-repeat="checkinMessage in checkinMessages">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  <strong>New Check-in!</strong> {{ checkinMessage.firstName }} {{ checkinMessage.lastName }} has checked in!
+</div>
