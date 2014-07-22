@@ -38,5 +38,10 @@
 
 <div class="alert alert-warning alert-dismissible" role="alert" ng-repeat="checkinMessage in checkinMessages">
   <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-  <strong>New Check-in!</strong> {{ checkinMessage.firstName }} {{ checkinMessage.lastName }} has checked in!
+    <div ng-if="checkinMessage.checkedIn">
+      <strong>New Check-in!</strong> {{ checkinMessage.firstName }} {{ checkinMessage.lastName }} has checked in!
+    </div>
+    <div ng-if="!checkinMessage.checkedIn">
+      <strong>New Check-in!</strong> {{ checkinMessage.firstName }} {{ checkinMessage.lastName }} has checked out!
+    </div>
 </div>
