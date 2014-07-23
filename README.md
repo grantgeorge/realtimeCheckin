@@ -3,6 +3,12 @@ realtimeCheckin
 
 Realtime check-in application
 
+###Prerequisites:
+
+####MongoDB
+
+http://docs.mongodb.org/manual/installation/
+
 ####Install Node Modules
 
     npm install
