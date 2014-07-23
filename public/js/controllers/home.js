@@ -45,6 +45,7 @@ angular.module('meanCheckin')
     socket.on('send:checkin', function (attendee) {
       console.log(attendee);
       $scope.alertCheckin(attendee);
+      
       angular.forEach($scope.attendees, function(currAttendee) {
         if(currAttendee._id == attendee._id) currAttendee.checkedIn = attendee.checkedIn;
       });
