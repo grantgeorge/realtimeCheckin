@@ -36,16 +36,20 @@ angular.module('meanCheckin')
     };
 
     $scope.messages = [];
-    $scope.checkinMessages = {};
+    $scope.checkinMessages = [];
+
+    $scope.alertCheckin = function(attendee) {
+      $scope.checkinMessages.unshift({firstName: attendee.firstName, lastName: attendee.lastName, checkedIn: attendee.checkedIn});
+    }
 
     socket.on('send:checkin', function (attendee) {
       console.log(attendee);
-      $scope.checkinMessages[attendee._id] = attendee;
+      $scope.alertCheckin(attendee);
     });
 
     $scope.checkin = function (attendee) {
       console.log(attendee);
-      $scope.checkinMessages[attendee._id] = attendee;
+      $scope.alertCheckin(attendee);
       socket.emit('send:checkin', attendee);
     };
 
