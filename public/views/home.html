@@ -5,11 +5,15 @@
 <div id="attendee-list" class="row">
   <div class="col-sm-4 col-sm-offset-4">
 
-    <div class="checkbox" ng-repeat="attendee in attendees">
+    <select ui-select2 ng-model="selectedAttendee" data-placeholder="Start typing an attendee name">
+      <option ng-repeat="attendee in attendees">{{ attendee.firstName }}</option>
+    </select>
+
+    <!-- <div class="checkbox" ng-repeat="attendee in attendees">
       <label>
         <flatui-checkbox model="attendee.checkedIn" ng-click="checkin(attendee)"></flatui-checkbox> {{ attendee.firstName }} {{ attendee.lastName }}
       </label>
-    </div>
+    </div> -->
 
   </div>
 </div>
