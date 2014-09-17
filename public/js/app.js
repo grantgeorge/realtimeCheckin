@@ -4,7 +4,8 @@ angular.module('meanCheckin', [
   'ngRoute',
   'ngResource',
   'flatuiDirectives',
-  'btford.socket-io'
+  'btford.socket-io',
+  'ui.bootstrap'
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.

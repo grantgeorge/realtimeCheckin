@@ -12,7 +12,7 @@ var io = require('socket.io').listen(server);
 
 // test a second git commit
 
-mongoose.connect('mongodb://localhost/meanShit');
+mongoose.connect('mongodb://localhost/meanApp');
 
 app.set('port', process.env.PORT || 8080);
 app.use(express.static(__dirname + '/public'));
