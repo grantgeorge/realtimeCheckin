@@ -17,6 +17,10 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'views/home2',
       controller: 'HomeCtrl2'
     }).
+    when('/addNew', {
+      templateUrl: 'views/addNew.html',
+      controller: 'AddNewCtrl'
+    }).
     otherwise({
       redirectTo: '/'
     });

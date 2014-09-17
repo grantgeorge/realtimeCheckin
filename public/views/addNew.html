@@ -1,0 +1,23 @@
+<div class="jumbotron text-center">
+  <h1>Realtime Check-in App <span class="label label-info">{{ attendees.length }}</span></h1>
+</div>
+
+<div id="attendee-form" class="row">
+  <div class="col-sm-8 col-sm-offset-2 text-center">
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <label for="inputFirstName" class="col-sm-2 control-label">First Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" ng-model="formData.firstName">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputLastName" class="col-sm-2 control-label">Last Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" ng-model="formData.lastName">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg" ng-click="createAttendee()">Add</button>
+    </form>
+  </div>
+</div>

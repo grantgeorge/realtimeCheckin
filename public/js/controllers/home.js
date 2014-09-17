@@ -1,5 +1,5 @@
 angular.module('meanCheckin')
-  .controller('HomeCtrl', function ($scope, $http, socket) {
+  .controller('HomeCtrl', function ($scope, $http, socket, $location) {
 
     $scope.formData = {};
 
@@ -72,6 +72,10 @@ angular.module('meanCheckin')
         text: $scope.message
       });
     };
+
+    $scope.addNew = function() {
+      $location.path('/addNew');
+    }
 
     // angular-bootstrap
 

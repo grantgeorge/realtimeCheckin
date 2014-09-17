@@ -22,6 +22,7 @@ app.use(express.bodyParser());
 var Attendee = mongoose.model('Attendee', {
   firstName     : String,
   lastName      : String,
+  fullName      : String,
   checkedIn     : Boolean,
   preRegistered : Boolean,
   checkinTime   : Date,
@@ -52,6 +53,7 @@ app.post('/api/attendees', function(req, res) {
   Attendee.create({
     firstName : req.body.firstName,
     lastName : req.body.lastName,
+    fullName : req.body.fullName,
     checkedIn : req.body.checkedIn,
     preRegistered : req.body.preRegistered,
     checkinTime : req.body.checkinTime,
