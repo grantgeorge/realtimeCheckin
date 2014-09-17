@@ -1,9 +1,18 @@
 angular.module('meanCheckin')
   .controller('OverlordCtrl', function ($scope, $http, socket, $location, $timeout) {
 
+    $scope.numberOfRegistrants = 0;
+    $scope.numberOfCheckins = 0;
+
     $http.get('/api/attendees')
       .success(function(data) {
         $scope.attendees = data;
+        $scope.numberOfRegistrants = $scope.attendees.length;
+        angular.forEach($scope.attendees, function(attendee){
+          if(attendee.checkedIn === true){
+            $scope.numberOfCheckins = $scope.numberOfCheckins + 1;
+          }
+        });
         console.log(data);
       })
       .error(function(data) {
@@ -15,6 +24,12 @@ angular.module('meanCheckin')
 
     $scope.alertCheckin = function(attendee) {
       $scope.checkinMessages.unshift({firstName: attendee.firstName, lastName: attendee.lastName, checkedIn: attendee.checkedIn});
+      if(attendee.checkedIn = true){
+        $scope.numberOfCheckins = $scope.numberOfCheckins + 1;
+      }
+      else {
+        $scope.numberOfCheckins = $scope.numberOfCheckins - 1;
+      }
       $timeout(function (){
         $scope.checkinMessages.splice($scope.checkinMessages.length-1, 1);
       }, 5000);
