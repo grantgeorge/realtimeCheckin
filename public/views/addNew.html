@@ -1,5 +1,5 @@
 <div class="jumbotron text-center">
-  <h1>Realtime Check-in App <span class="label label-info">{{ attendees.length }}</span></h1>
+  <h1>Realtime Check-in App</h1>
 </div>
 
 <div id="attendee-form" class="row">
@@ -17,7 +17,8 @@
           <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" ng-model="formData.lastName">
         </div>
       </div>
-      <button type="submit" class="btn btn-primary btn-lg" ng-click="createAttendee()">Add</button>
+      <button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="createAttendee()">Add</button>
+      <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="goBack()">Back</button>
     </form>
   </div>
 </div>

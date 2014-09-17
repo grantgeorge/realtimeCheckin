@@ -41,6 +41,10 @@ angular.module('meanCheckin')
         });
     };
 
+    $scope.goBack = function() {
+      $location.path('/');
+    };
+
     $scope.messages = [];
     $scope.checkinMessages = [];
 

@@ -1,18 +1,24 @@
 <div class="jumbotron text-center">
-  <h1>Realtime Check-in App <span class="label label-primary">{{ attendees.length }}</span></h1>
+  <h1>Realtime Check-in App</h1>
 </div>
 
-<form class="form-horizontal" role="form">
-  <input type="text" ng-model="selectedAttendee" placeholder="Start typing a name!" typeahead="attendee as attendee.fullName for attendee in attendees | filter:$viewValue | limitTo:8" class="form-control">
-  <br />
-  <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="checkIn(selectedAttendee)">Check-in</button>
-</form>
+<div id="attendee-form" class="row">
+  <div class="col-sm-8 col-sm-offset-2 text-center">
 
-<br />
+    <form class="form-horizontal" role="form">
+      <input type="text" ng-model="selectedAttendee" placeholder="Start typing a name!" typeahead="attendee as attendee.fullName for attendee in attendees | filter:$viewValue | limitTo:8" class="form-control">
+      <br />
+      <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="checkIn(selectedAttendee)">Check-in</button>
+    </form>
 
-<button type="button" class="btn btn-primary btn-lg btn-block" ng-click="addNew()">New</button>
+    <br />
 
-<br />
+    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="addNew()">New</button>
+
+    <br />
+
+  </div>
+</div>
 
 <div class="alert alert-success alert-dismissible" role="alert" ng-repeat="checkinMessage in checkinMessages">
   <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
