@@ -11,6 +11,8 @@
     "angular-route": "~1.2.20",
     "bootstrap": "3.1.0",
     "angular-bootstrap": "~0.11.0",
-    "angular-socket-io": "~0.6.0"
+    "angular-socket-io": "~0.6.0",
+    "highcharts-ng": "~0.0.7",
+    "highcharts": "~4.0.4"
   }
 }

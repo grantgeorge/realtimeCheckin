@@ -5,7 +5,8 @@ angular.module('meanCheckin', [
   'ngResource',
   'flatuiDirectives',
   'btford.socket-io',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'highcharts-ng'
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.

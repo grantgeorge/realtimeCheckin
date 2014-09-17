@@ -13,11 +13,18 @@
 
 <br />
 
-<alert ng-repeat="checkinMessage in checkinMessages" type="success" close="closeMessage($index)">
-  <div ng-if="checkinMessage.checkedIn">
-    <strong>New Check-in!</strong> {{ checkinMessage.firstName }} {{ checkinMessage.lastName }} has checked in!
+<div class="row">
+  <div class="col-md-4 col-md-offset-1">
+    <highchart id="chart1" config="chartConfig" ></highchart>
   </div>
-  <div ng-if="!checkinMessage.checkedIn">
-    <strong>New Check-out!</strong> {{ checkinMessage.firstName }} {{ checkinMessage.lastName }} has checked out!
+  <div class="col-md-6 col-md-offset-1">
+    <alert ng-repeat="checkinMessage in checkinMessages" type="success" close="closeMessage($index)">
+      <div ng-if="checkinMessage.checkedIn">
+        <strong>New Check-in!</strong> {{ checkinMessage.firstName }} {{ checkinMessage.lastName }} has checked in!
+      </div>
+      <div ng-if="!checkinMessage.checkedIn">
+        <strong>New Check-out!</strong> {{ checkinMessage.firstName }} {{ checkinMessage.lastName }} has checked out!
+      </div>
+    </alert>
   </div>
-</alert>
+</div>

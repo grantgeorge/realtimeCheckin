@@ -13,6 +13,8 @@ angular.module('meanCheckin')
             $scope.numberOfCheckins = $scope.numberOfCheckins + 1;
           }
         });
+        $scope.addPoints($scope.numberOfCheckins);
+        $scope.addPoints($scope.numberOfRegistrants);
         console.log(data);
       })
       .error(function(data) {
@@ -28,10 +30,14 @@ angular.module('meanCheckin')
       if(attendee.checkedIn === true){
         console.log('true');
         $scope.numberOfCheckins = $scope.numberOfCheckins + 1;
+        $scope.chartConfig.series[0].data[0] = $scope.numberOfCheckins;
+        console.log($scope.chartConfig.series);
       }
       else {
         console.log('false');
         $scope.numberOfCheckins = $scope.numberOfCheckins - 1;
+        $scope.chartConfig.series[0].data[0] = $scope.numberOfCheckins;
+        console.log($scope.chartConfig.series);
       }
       $timeout(function (){
         $scope.checkinMessages.splice($scope.checkinMessages.length-1, 1);
@@ -53,6 +59,44 @@ angular.module('meanCheckin')
 
     $scope.goBack = function() {
       $location.path('/');
+    };
+
+    // chart
+    $scope.chartSeries = [
+      {"name": "Some data", "data": [
+      ]}
+    ];
+
+    $scope.addPoints = function (input) {
+      var seriesArray = $scope.chartConfig.series;
+      var idx = 0;
+      seriesArray[idx].data = seriesArray[idx].data.concat([input])
+    };
+
+    $scope.chartConfig = {
+      options: {
+        chart: {
+          type: 'pie'
+        },
+        plotOptions: {
+          series: {
+            stacking: ''
+          }
+        }
+      },
+      series: $scope.chartSeries,
+      title: {
+        text: 'Check-Ins'
+      },
+      credits: {
+        enabled: true
+      },
+      loading: false,
+      size: {}
+    }
+
+    $scope.reflow = function () {
+      $scope.$broadcast('highchartsng.reflow');
     };
 
   });
