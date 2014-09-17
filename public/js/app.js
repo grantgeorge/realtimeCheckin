@@ -21,6 +21,10 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'views/addNew.html',
       controller: 'AddNewCtrl'
     }).
+    when('/overlord', {
+      templateUrl: 'views/overlord.html',
+      controller: 'OverlordCtrl'
+    }).
     otherwise({
       redirectTo: '/'
     });
