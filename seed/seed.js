@@ -107,6 +107,60 @@ mongoose.connect('mongodb://localhost/meanApp', function() {
 	    updated : new Date()
 	},
 	{
+	    firstName : "Jim",
+	    lastName : "Raynor",
+	    fullName : 'Jim Raynor',
+	    checkedIn : false,
+	    preRegistered : false,
+	    checkinTime : null,
+	    updated : new Date()
+	},
+	{
+	    firstName : "Tychus",
+	    lastName : "Findlay",
+	    fullName : 'Tychus Findlay',
+	    checkedIn : false,
+	    preRegistered : false,
+	    checkinTime : null,
+	    updated : new Date()
+	},
+	{
+	    firstName : "Sarah",
+	    lastName : "Kerrigan",
+	    fullName : 'Sarah Kerrigan',
+	    checkedIn : false,
+	    preRegistered : false,
+	    checkinTime : null,
+	    updated : new Date()
+	},
+	{
+	    firstName : "Jaina",
+	    lastName : "Proudmoore",
+	    fullName : 'Jaina Proudmoore',
+	    checkedIn : false,
+	    preRegistered : false,
+	    checkinTime : null,
+	    updated : new Date()
+	},
+	{
+	    firstName : "Muradin",
+	    lastName : "Bronzebeard",
+	    fullName : 'Muradin Bronzebeard',
+	    checkedIn : false,
+	    preRegistered : false,
+	    checkinTime : null,
+	    updated : new Date()
+	},
+	{
+	    firstName : "Illidan",
+	    lastName : "Stormrage",
+	    fullName : 'Illidan Stormrage',
+	    checkedIn : false,
+	    preRegistered : false,
+	    checkinTime : null,
+	    updated : new Date()
+	},
+	{
 	    firstName : "Frank",
 	    lastName : "Sinatra",
 	    fullName : 'Frank Sinatra',
@@ -118,6 +172,7 @@ mongoose.connect('mongodb://localhost/meanApp', function() {
 	{
 	    firstName : "Louis",
 	    lastName : "Armstrong",
+	    fullName : 'Louis Armstrong',
 	    checkedIn : false,
 	    preRegistered : false,
 	    checkinTime : null,
@@ -126,6 +181,7 @@ mongoose.connect('mongodb://localhost/meanApp', function() {
 	{
 	    firstName : "Leeroy",
 	    lastName : "Jenkins",
+	    fullName : 'Leeroy Jenkins',
 	    checkedIn : false,
 	    preRegistered : false,
 	    checkinTime : null,

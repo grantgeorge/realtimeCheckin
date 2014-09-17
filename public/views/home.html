@@ -9,11 +9,8 @@
       <input type="text" ng-model="selectedAttendee" placeholder="Start typing a name!" typeahead="attendee as attendee.fullName for attendee in attendees | filter:$viewValue | limitTo:8" class="form-control">
       <br />
       <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="checkIn(selectedAttendee)">Check-in</button>
+      <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="addNew()">New</button>
     </form>
-
-    <br />
-
-    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="addNew()">New</button>
 
     <br />
 
