@@ -2,6 +2,7 @@ angular.module('meanCheckin')
   .controller('HomeCtrl', function ($scope, $http, socket, $location) {
 
     $scope.formData = {};
+    $scope.selectedAttendee = undefined;
 
     $http.get('/api/attendees')
       .success(function(data) {
@@ -51,8 +52,18 @@ angular.module('meanCheckin')
       });
     });
 
-    $scope.checkin = function (attendee) {
+    $scope.checkIn = function (attendee) {
+      attendee.checkedIn = !attendee.checkedIn;
       console.log(attendee);
+      $http.put('/api/attendees/' + attendee._id, attendee)
+        .success(function(data) {
+          $scope.formData = {};
+          $scope.attendees = data;
+          console.log(data);
+        })
+        .error(function(data) {
+          console.log('Error: ' + data);
+        });
       $scope.alertCheckin(attendee);
       socket.emit('send:checkin', attendee);
     };

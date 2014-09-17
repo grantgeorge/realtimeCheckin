@@ -76,6 +76,7 @@ app.put('/api/attendees/:attendee_id', function(req, res) {
   Attendee.update({ _id : req.params.attendee_id }, { $set: {
       firstName : req.body.firstName,
       lastName : req.body.lastName,
+      fullName : req.body.fullName,
       checkedIn : req.body.checkedIn,
       preRegistered : req.body.preRegistered,
       checkinTime : req.body.checkinTime,

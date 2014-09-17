@@ -1,15 +1,20 @@
 <div class="jumbotron text-center">
-  <h1>Realtime Check-in App <span class="label label-info">{{ attendees.length }}</span></h1>
+  <h1>Realtime Check-in App <span class="label label-primary">{{ attendees.length }}</span></h1>
 </div>
 
-<pre>Model: {{selected | json}}</pre>
 <form class="form-horizontal" role="form">
-  <input type="text" ng-model="selected" typeahead="attendee.fullName for attendee in attendees | filter:$viewValue | limitTo:8" class="form-control">
+  <input type="text" ng-model="selectedAttendee" placeholder="Start typing a name!" typeahead="attendee as attendee.fullName for attendee in attendees | filter:$viewValue | limitTo:8" class="form-control">
+  <br />
+  <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="checkIn(selectedAttendee)">Check-in</button>
 </form>
 
 <br />
 
-<div class="alert alert-warning alert-dismissible" role="alert" ng-repeat="checkinMessage in checkinMessages">
+<button type="button" class="btn btn-primary btn-lg btn-block" ng-click="addNew()">New</button>
+
+<br />
+
+<div class="alert alert-success alert-dismissible" role="alert" ng-repeat="checkinMessage in checkinMessages">
   <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
     <div ng-if="checkinMessage.checkedIn">
       <strong>New Check-in!</strong> {{ checkinMessage.firstName }} {{ checkinMessage.lastName }} has checked in!
@@ -18,5 +23,3 @@
       <strong>New Check-out!</strong> {{ checkinMessage.firstName }} {{ checkinMessage.lastName }} has checked out!
     </div>
 </div>
-
-<button type="button" class="btn btn-large btn-block btn-primary" ng-click="addNew()">New</button>
