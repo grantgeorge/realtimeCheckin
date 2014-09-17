@@ -21,5 +21,10 @@ http://docs.mongodb.org/manual/installation/
 
     node server.js
     
+####Seed Data
+    
+    node seed/seed.js
+    
+will drop the database and add seed data
 
 Runs on http://localhost:8080/
