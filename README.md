@@ -1,6 +1,10 @@
 realtimeCheckin
 ===============
 
+@fignerco built a iOS client that can consume realtime data from this application!
+
+https://github.com/fingerco/realtimeCheckin-iOS
+
 Realtime check-in application
 
 ###Prerequisites:
