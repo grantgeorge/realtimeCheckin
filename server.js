@@ -8,10 +8,6 @@ var mongoose = require('mongoose');
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 
-// test git
-
-// test a second git commit
-
 mongoose.connect('mongodb://localhost/meanApp');
 
 app.set('port', process.env.PORT || 8080);
